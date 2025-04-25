@@ -46,7 +46,7 @@ const FilterPanel = () => {
                 <SelectValue placeholder="From Year" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Any Year</SelectItem>
+                <SelectItem value="any">Any Year</SelectItem>
                 {yearOptions.map((year) => (
                   <SelectItem key={`from-${year}`} value={year.toString()}>{year}</SelectItem>
                 ))}
@@ -64,7 +64,7 @@ const FilterPanel = () => {
                 <SelectValue placeholder="To Year" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="">Present</SelectItem>
+                <SelectItem value="present">Present</SelectItem>
                 {yearOptions.map((year) => (
                   <SelectItem key={`to-${year}`} value={year.toString()}>{year}</SelectItem>
                 ))}
