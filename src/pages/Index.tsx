@@ -15,7 +15,7 @@ const Index = () => {
         <div className="min-h-screen flex w-full flex-col">
           <TopNav />
           <div className="flex flex-1">
-            <Sidebar defaultCollapsed={false} collapsible className="border-r">
+            <Sidebar defaultCollapsed={false} collapsible="offcanvas" className="border-r">
               <SidebarContent>
                 <HistorySidebar />
               </SidebarContent>
