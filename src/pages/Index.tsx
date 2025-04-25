@@ -11,11 +11,11 @@ import { SidebarProvider, Sidebar, SidebarContent } from '@/components/ui/sideba
 const Index = () => {
   return (
     <AppProvider>
-      <SidebarProvider>
+      <SidebarProvider defaultOpen={true}>
         <div className="min-h-screen flex w-full flex-col">
           <TopNav />
           <div className="flex flex-1">
-            <Sidebar defaultCollapsed={false} collapsible="offcanvas" className="border-r">
+            <Sidebar collapsible="offcanvas" className="border-r">
               <SidebarContent>
                 <HistorySidebar />
               </SidebarContent>
