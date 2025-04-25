@@ -1,13 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React from 'react';
+import { AppProvider } from '@/contexts/AppContext';
+import TopNav from '@/components/TopNav';
+import SearchBox from '@/components/SearchBox';
+import FilterPanel from '@/components/FilterPanel';
+import ResultsPanel from '@/components/ResultsPanel';
+import HistorySidebar from '@/components/HistorySidebar';
+import { SidebarProvider, Sidebar, SidebarContent } from '@/components/ui/sidebar';
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <AppProvider>
+      <SidebarProvider>
+        <div className="min-h-screen flex w-full flex-col">
+          <TopNav />
+          <div className="flex flex-1">
+            <Sidebar defaultCollapsed={false} collapsible className="border-r">
+              <SidebarContent>
+                <HistorySidebar />
+              </SidebarContent>
+            </Sidebar>
+            <main className="flex-1 container py-6">
+              <div className="grid gap-6 md:grid-cols-[300px_1fr] lg:grid-cols-[250px_1fr] xl:grid-cols-[300px_1fr]">
+                <div>
+                  <FilterPanel />
+                </div>
+                <div className="space-y-6">
+                  <SearchBox />
+                  <ResultsPanel />
+                </div>
+              </div>
+            </main>
+          </div>
+        </div>
+      </SidebarProvider>
+    </AppProvider>
   );
 };
 
